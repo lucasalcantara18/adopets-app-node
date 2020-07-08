@@ -29,7 +29,13 @@ export  default class UserController {
         this.router.post(`${this.path}/login`, validationMiddleware(LoginUserDto), this.login);
         this.router.get(`${this.path}/logout`, AuthMiddleware, this.logout);
         this.router.get(`${this.path}/authentication`, this.authentication);
+        this.router.get(`${this.path}/alive`, this.alive);
         
+    }
+
+
+    alive = (req: Request, res: Response, next: NextFunction) => {
+        return res.send({message: new Date()});
     }
 
     authentication = (req: Request, res: Response, next: NextFunction) => {
