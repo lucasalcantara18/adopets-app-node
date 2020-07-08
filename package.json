@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "knex": "knex --knexfile knexfile.ts migrate:latest",
-    "prd": "npx ts-node src/server.ts"
+    "prd": "ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
